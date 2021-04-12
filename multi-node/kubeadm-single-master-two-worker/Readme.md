@@ -1,6 +1,5 @@
 
-# Kubernetes Single Master Cluster Setup with Vagrant 
-Vagrant multimachine docs: https://www.vagrantup.com/docs/multi-machine
+# Kubernetes single Master and multiple Worker Node Cluster Setup uwing Kubeadm 
 
 ## Start VMs
 
@@ -250,3 +249,6 @@ Try reach the default webserver page from your browser:
 $ kubectl get services
 curl 10.102.246.1:80
 ```
+
+## Useful Links
+Vagrant multimachine docs: https://www.vagrantup.com/docs/multi-machine

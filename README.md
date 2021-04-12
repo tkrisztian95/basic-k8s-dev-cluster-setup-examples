@@ -1,5 +1,5 @@
 # Setup your Dev Kubernetes Cluster examples on Windows
-In this directory you can find guidance and helping resources to quickstart your own Kubernetes (dev purpose only) cluster locally on Windows.
+In this repo you can find guidance and helping resources to quickstart your own Kubernetes (dev purpose only) cluster locally on Windows.
 
 ## Pre-requisites
 
