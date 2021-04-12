@@ -1,0 +1,49 @@
+
+BOX_IMAGE = "centos/7"
+
+Vagrant.configure("2") do |config|
+  
+    ####### VM definitions #######
+    # Control plane (Master node)
+    config.vm.define "master" do |master|
+        master.vm.box = BOX_IMAGE
+        master.vm.hostname = "master-node"
+        master.vm.network :private_network, ip: "10.0.0.10"
+        master.vm.provider "virtualbox" do |vb|
+            vb.gui = false
+            vb.name = "k8s-master"
+            vb.memory = "1024"
+            vb.cpus = 2
+        end
+    end
+  
+    # Worker nodes
+    config.vm.define "worker-1" do |worker1|
+        worker1.vm.box = BOX_IMAGE
+        worker1.vm.network :private_network, ip: "10.0.0.11"
+        worker1.vm.hostname = "worker-node-1"
+        worker1.vm.provider "virtualbox" do |vb|
+            vb.gui = false
+            vb.name = "k8s-worker-1"
+            vb.memory = "2048"
+            vb.cpus = 2
+        end    
+    end
+
+    config.vm.define "worker-2", autostart: false do |worker2|
+        worker2.vm.box = BOX_IMAGE       
+        worker2.vm.hostname = "worker-node-2"
+        worker2.vm.network :private_network, ip: "10.0.0.12"
+        worker2.vm.provider "virtualbox" do |vb|
+            vb.gui = false
+            vb.name = "k8s-worker-2"
+            vb.memory = "2048"
+            vb.cpus = 2
+        end
+    end
+
+    ####### Provision #######
+    # - Run on every VMs
+    config.vm.provision "shell", path: "prepare_node.sh"
+
+end
