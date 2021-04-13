@@ -57,15 +57,14 @@ To start using your cluster, ...
 ```
 The output contains a copy-paste solution to join additional worker nodes into the cluster. Note it down for configuring `worker-1` and the `worker-2` VMs.
 
-**Info:** *Kubernetes isn't listening to all interfaces by default. It picks the interface with the default gateway and listens to that. Use --api-advertise-addresses=<the eth1 ip addr> on kubeadm init in order to use the host-only interface.*
-
-#### Note the Provided Kubeadm Join Command 
-To join any worker nodes into the cluster later note the output. 
+#### Example `kubeadm join` command
 ```
-// Note the output line as the example
 kubeadm join --token <token> <control-plane-host>:<control-plane-port> --discovery-token-ca-cert-hash sha256:<hash>
 ```
-### Continue Configuring Master
+
+**Info:** *Kubernetes isn't listening to all interfaces by default. It picks the interface with the default gateway and listens to that. We use the `--api-advertise-addresses=<the eth1 ip addr>` flag in the `kubeadm init` step to use the host-only interface.*
+
+### Configuring the Master Node
 
 Set the `KUBECONFIG` environment variable.
 ```
@@ -78,7 +77,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-Verify kubectl is working:
+Verify `kubectl` is working:
 ```
 $ kubectl version
 // Expected output:
@@ -213,7 +212,7 @@ sudo firewall-cmd --state
 not running
 ```
 
-### Adding Worker Nodes
+### Join Worker Nodes to the Cluster
 To ssh into the worker node `worker-1` 
 ```
 PS> vagrant ssh worker-1
@@ -256,7 +255,7 @@ At this point you should see the node with name `worker-node-1` in the list with
 
 Follow the same process to add more worker nodes.
 
-### Test the cluster with creating a deployment
+### Verify the Kubernetes cluster is ready
 To ensure that our Kubernetes cluster is ready we are going to create a deployment with a web server running in our cluster and listening on port 80.
 
 Use the following command to deploy Nginx into the cluster:
@@ -274,5 +273,5 @@ $ kubectl get services
 curl 10.102.246.1:80
 ```
 
-## Useful Links
+## Related Links & Resources
 Vagrant multimachine docs: https://www.vagrantup.com/docs/multi-machine
