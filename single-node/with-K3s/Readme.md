@@ -13,7 +13,7 @@ See more: https://rancher.com/docs/k3s/latest/en/
 
 Use the provided Vagrant file to start a VM with CentOS 7 linux distro. The Vagrantfile uses the shell provisioner to get the K3s install script from the remote source and execute it when the VM starts.
 
-### Setup 
+### Basic Vagrant commands 
 To start the VM:
 ```
 PS> vagrant up

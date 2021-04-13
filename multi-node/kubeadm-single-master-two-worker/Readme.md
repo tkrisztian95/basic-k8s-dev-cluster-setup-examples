@@ -1,22 +1,46 @@
 
-# Kubernetes single Master and multiple Worker Node Cluster Setup uwing Kubeadm 
+# Setup a Multi-Node Kubernetes cluster using Kubeadm
 
-## Start VMs
+**Prerequisites:**
+- Vagrant installed with VirtualBox
+    1. Install VirtualBox form: https://www.virtualbox.org/
+    2. Install Vagrant from: https://www.vagrantup.com/
 
-```
-PS> vagrant up
-```
+## Spinning up a CentOS 7 VMs with Docker pre-installed
 
-## Set Up Cluster with Kubeadm (manually)
+Use the provided Vagrant file to start VMs with CentOS 7 linux distro. The Vagrantfile uses the shell provisioner to prepare each machine in this multi-machine setup.
 
 The following packages will be installed on each node via the provisioning:
+- Docker
+
+The following Kubernetes components will be installed on each node via the provisioning:
 - kubeadm
 - kubelet 
 - kubectl (communicating with the cluster)
 
 Configured to keep all on the same version within the cluster.
 
-**Note:** *To get the current K8s stable version release version: http://storage.googleapis.com/kubernetes-release/release/stable.txt*
+**Note:** Check the provided `prepare_node.sh` for more details.
+
+### Basic Vagrant commands 
+To start the VM:
+```
+PS> vagrant up
+```
+
+**Note:** *Takes ~3min*
+
+To SSH into the master node VM:
+```
+PS> vagrant ssh master
+```
+
+To SSH into one of the worker node VM:
+```
+PS> vagrant ssh worker-<num>
+```
+
+## Set Up Cluster with Kubeadm (manually)
 
 ### Init Master Node
 To init control plane on master node:
