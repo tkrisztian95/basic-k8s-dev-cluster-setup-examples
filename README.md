@@ -3,8 +3,8 @@ In this repo you can find guidance and helping resources to quickstart your own 
 
 ## Pre-requisites
 
-- Docker for Windows installed
 - Vagrant with VirtualBox installed
+- Docker for Windows installed (optional)
 - Kubernetes fundamentals
 
 ## Objectives covered
@@ -12,6 +12,7 @@ In this repo you can find guidance and helping resources to quickstart your own 
 - Setup single node Kubernetes cluster:
     - Using DockerDesktop (via simply enabling K8s feature)
     - Using VM with K3s preinstalled (Rancher's install script)
+    - Using VM with K3d preinstalled 
 - Setup multi node Kubernetes cluster:
     - Using VMs (Docker preinstalled) with `kubeadm`
 
