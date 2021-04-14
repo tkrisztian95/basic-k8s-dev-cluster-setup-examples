@@ -1,6 +1,8 @@
 
 # Setup a Multi-Node Kubernetes cluster using Kubeadm
 
+See more at: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
+
 **Prerequisites:**
 - Vagrant installed with VirtualBox
     1. Install VirtualBox form: https://www.virtualbox.org/
@@ -226,8 +228,6 @@ $ kubeadm join --token <token> 10.0.0.10:6443 --discovery-token-ca-cert-hash sha
 **Note:** *In case you forgot to note the join command execute this on the master again `kubeadm token create --print-join-command` to get another one.* 
 
 **Note:** *In case it stuck at `Running pre-flight check` try checking firewall state on the master node with command `sudo firewall-cmd --state`.*
-
-See more at: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
 
 On a second terminal SSH to the master:
 ```
