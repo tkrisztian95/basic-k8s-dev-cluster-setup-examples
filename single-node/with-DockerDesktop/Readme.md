@@ -1,4 +1,4 @@
-# Quickstart with Docker Desktop
+# Kubernetes with Docker Desktop
 
 Docker Desktop is freely available in a community edition, for Windows and Mac.
 Supposed that you're having Docker on your Windows host so you already have Docker Desktop installed.
@@ -12,7 +12,7 @@ You just need to enable K8s via the Docker Desktop settings.
 2. Navigate to Settings.
 3. Click on menu item `Kubernetes`.
 4. Check the `Enable Kubernetes` checkbox.
-5. That’s it! 
+5. That’s it!
 
 ![Screenshot](images/k8s_enabled.png)
 
@@ -31,6 +31,9 @@ KubeDNS is running at https://kubernetes.docker.internal:6443/api/v1/namespaces/
 
 ```
 
-**Note:** *Using Docker Desktop with WSL2 integration enabled is recommended. Please make sure that the WSL2 support is enabled.*
+**Note**: For troubleshooting you can find the DockerDesktop logs in `~\AppData\Local\Docker\log.txt`.
+
+## WSL2 backend
+Using Docker Desktop with WSL2 integration enabled is recommended. Please make sure that the WSL2 support is enabled.
 
 ![Screenshot](images/wsl2_enabled.png)

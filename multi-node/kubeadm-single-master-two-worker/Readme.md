@@ -22,7 +22,6 @@ Configured to keep all on the same version within the cluster.
 
 **Note:** Check the provided `prepare_node.sh` for more details.
 
-### Basic Vagrant commands 
 To start the VM:
 ```
 PS> vagrant up
