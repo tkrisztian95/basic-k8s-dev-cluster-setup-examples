@@ -34,6 +34,7 @@ KubeDNS is running at https://kubernetes.docker.internal:6443/api/v1/namespaces/
 **Note**: For troubleshooting you can find the DockerDesktop logs in `~\AppData\Local\Docker\log.txt`.
 
 ## WSL2 backend
+
 Using Docker Desktop with WSL2 integration enabled is recommended. Please make sure that the WSL2 support is enabled.
 
 ![Screenshot](images/wsl2_enabled.png)
