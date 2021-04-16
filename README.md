@@ -16,7 +16,7 @@ Install the following:
     - Start VM using Vagrant:
         - VagrantBox with K3s preinstalled.
 - Setup multi-node Kubernetes cluster:
-    - Start VM using Vagrant:
+    - Start VMs using Vagrant:
         - VagrantBox with Docker and Kubernetes preinstalled (using `kubeadm`)
 
 ### FAQ
