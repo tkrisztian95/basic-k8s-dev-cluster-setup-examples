@@ -3,8 +3,8 @@ In this repo you can find guidance and helping resources to quickstart your own 
 
 ## Prerequisites
 
-- Docker for Windows installed (optional)
-- Vagrant with VirtualBox installed
+- Docker for Windows installed
+- [Vagrant](https://www.vagrantup.com/) with [VirtualBox](https://www.virtualbox.org/) installed
 - Kubernetes fundamentals
 
 ## Objectives Covered
