@@ -3,7 +3,7 @@
 Docker Desktop is freely available in a community edition, for Windows and Mac.
 Supposed that you're having Docker on your Windows host so you already have Docker Desktop installed.
 
-If not you can install it with the installer from the official site here.  https://www.docker.com/products/docker-desktop 
+If not you can install it with the installer from the official site here:  https://www.docker.com/products/docker-desktop 
 
 Setting up a K8s cluster for development purposes locally in this case is pretty simple.
 You just need to enable K8s via the Docker Desktop settings.
@@ -32,7 +32,7 @@ KubeDNS is running at https://kubernetes.docker.internal:6443/api/v1/namespaces/
 
 ```
 
-## WSL2 backend
+## WSL2 Backend
 
 Using Docker Desktop with WSL2 integration enabled is recommended. Please make sure that the WSL2 support is enabled.
 
@@ -42,11 +42,11 @@ Using Docker Desktop with WSL2 integration enabled is recommended. Please make s
 
 ### Logs
 
-For troubleshooting you can find the DockerDesktop logs in `~\AppData\Local\Docker\log.txt`.
+For troubleshooting you can find the DockerDesktop logs at `~\AppData\Local\Docker\log.txt`.
 
-### Docker for Windows stuck at "Kubernetes is Starting"
+### Docker for Windows Stuck at "Kubernetes Is Starting"
 
-If you have antivirus software it might blocks editing the hosts files at `C:\Windows\System32\drivers\etc`.
+If you have antivirus software installed it might blocks editing the hosts files at `C:\Windows\System32\drivers\etc`.
 If Kubernetes stuck at starting try adding this line manually to the `hosts` file.
 
 ``` text
