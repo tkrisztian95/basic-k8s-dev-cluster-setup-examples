@@ -3,11 +3,6 @@
 [K3s](https://k3s.io/) is a certified, lightweight prod ready Kubernetes distribution by Rancher. Very easy to set up using the quickstart installation script.
 
 See more: https://rancher.com/docs/k3s/latest/en/
-
-**Prerequisites:**
-- Vagrant installed with VirtualBox
-    1. Install VirtualBox form: https://www.virtualbox.org/
-    2. Install Vagrant from: https://www.vagrantup.com/
      
 ## Spinning up the CentOS 7 VM with K3s pre-installed
 
