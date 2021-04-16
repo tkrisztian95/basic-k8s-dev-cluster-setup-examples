@@ -3,8 +3,6 @@
 Docker Desktop is freely available in a community edition, for Windows and Mac.
 Supposed that you're having Docker on your Windows host so you already have Docker Desktop installed.
 
-If not you can install it with the installer from the official site here:  https://www.docker.com/products/docker-desktop 
-
 Setting up a K8s cluster for development purposes locally in this case is pretty simple.
 You just need to enable K8s via the Docker Desktop settings.
 
