@@ -1,6 +1,6 @@
 # Setup Dev Kubernetes Cluster on Windows
 
-In this repo you can find resources to quickstart your Kubernetes (dev purpose only) cluster locally on Windows.
+In this repo you can find resources to quickstart your Kubernetes (dev purpose only) cluster locally on Windows using VMs and Vagrant.
 
 ## Prerequisites
 
@@ -34,6 +34,12 @@ To start the VM:
 
 ``` PowerShell
 PS> vagrant up
+```
+
+To SSH into the VM:
+
+``` PowerShell
+PS> vagrant ssh
 ```
 
 To delete the VM:
