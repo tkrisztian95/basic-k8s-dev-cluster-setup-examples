@@ -43,6 +43,6 @@ Vagrant.configure("2") do |config|
     curl -sfL https://get.k3s.io | sh -
     SHELL
 
-  # Sync a folder on the host machine to the guest machine  
+  # Sync a folder from the host machine
   config.vm.synced_folder "src/", "/home/vagrant/src"
 end
