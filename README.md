@@ -4,11 +4,16 @@ In this repo you can find resources to quickstart your Kubernetes (dev purpose o
 
 ## Prerequisites
 
-Install the following:
+Install the following software on your host machine:
 
 - [DockerDesktop for Windows](https://www.docker.com/products/docker-desktop)
 - [VirtualBox](https://www.virtualbox.org/)
 - [Vagrant](https://www.vagrantup.com/)
+
+### Vagrant Virtual Box guest plugin:
+```
+PS> vagrant plugin install vagrant-vbguest
+```
 
 ## Objectives Covered
 
@@ -49,7 +54,6 @@ PS> vagrant destroy
 ```
 
 **Note:** *Don't forget to `cd` into the directory where the `Vagrantfile` is.*
-
 ### Links & Other
 
 - To get the current Kubernetes stable release version simply: http://storage.googleapis.com/kubernetes-release/release/stable.txt
