@@ -48,9 +48,9 @@ By default, Vagrant will share your project directory (the directory with the Va
 
 ### Where to find synced files?
 
-**Host:** This VM is configured to sync the `src` folder (the directory next to the Vagrantfile) with the guest machine. 
+- **Host:** This VM is configured to sync the `src` folder (the directory next to the Vagrantfile) with the guest machine. 
 
-**VM:** You can locate the synced resources in the guest machine at `/home/vagrant/src`.
+- **VM:** You can locate the synced resources in the guest machine at `/home/vagrant/src`.
 
 **Note:** You can simply change the config to point to another source directory (realtive or absolute) on your host or in the guest (absolute) any time by editing the line `config.vm.synced_folder` in the Vagrantfile.
 
