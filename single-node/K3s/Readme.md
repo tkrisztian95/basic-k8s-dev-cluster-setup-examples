@@ -13,7 +13,7 @@ To start the VM:
 PS> vagrant up
 ```
 
-**Note:** *Takes ~30sec*
+**Note:** *It takes roughly ~5min to prepare the VM and install/update addtional packages.*
 
 To SSH into the VM:
 ```
