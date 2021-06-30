@@ -39,6 +39,11 @@ NAME           STATUS   ROLES                  AGE    VERSION
 k3s-dev-node   Ready    control-plane,master   105s   v1.20.4+k3s1
 ```
 
+### Pre-installed Standard Dev tools
+
+- [Git](https://git-scm.com/)
+- [Krew](https://krew.sigs.k8s.io/)
+
 ## Synced folders
 
 Synced folders enable Vagrant to sync a folder on the host machine to the guest machine, allowing you to continue working on your project's files on your host machine.
