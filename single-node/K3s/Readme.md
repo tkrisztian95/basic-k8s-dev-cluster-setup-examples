@@ -44,6 +44,42 @@ k3s-dev-node   Ready    control-plane,master   105s   v1.20.4+k3s1
 - [Git](https://git-scm.com/)
 - [Krew](https://krew.sigs.k8s.io/)
 
+
+## Networking
+
+- The hostname is: `k3s-dev.local` 
+- The private IP address is: `192.168.33.10`
+  - Can be used for connecting from the host machine.
+
+See more at: https://learn.hashicorp.com/tutorials/vagrant/getting-started-networking
+
+### How to connect to a K8s pod running in the VM from the host
+
+Example: Deploy a Hello world app example and use kubernetes port-forwarding.
+
+Run the following commands in the VM:
+```
+$ kubectl run kubernetes-first-app --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080
+$ kubectl port-forward pod/kubernetes-first-app 8080:8080 --address 0.0.0.0
+// Expected output:
+Forwarding from 0.0.0.0:8080 -> 8080
+```
+
+Check K8s port-forwarding works inside the VM, so you can reach the server running inside the pod:
+```
+// Open a second terminal (vagrant ssh)
+$ curl localhost:8080
+// Expected output:
+Hello Kubernetes bootcamp! | Running on: kubernetes-first-app | v=1
+```
+
+Check can connect from the host:
+To connect from the host machine to the pod running inside the K8s cluster on the VM, navigate to one of URLs in your browser: 
+- Using the VMs private IP address: http://192.168.33.10:8080, 
+  -  It's fixed, defined in the Vagrantfile.
+- or via http://localhost:8080 
+  - With using Vagrant port-forward feature. Simply uncomment the line in the Vagrantfile: `config.vm.network :forwarded_port, guest: 8080, host:8080`
+
 ## Synced folders
 
 Synced folders enable Vagrant to sync a folder on the host machine to the guest machine, allowing you to continue working on your project's files on your host machine.

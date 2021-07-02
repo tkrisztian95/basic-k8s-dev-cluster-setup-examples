@@ -15,7 +15,8 @@ Vagrant.configure("2") do |config|
   # https://github.com/dotless-de/vagrant-vbguest/issues/399
   config.vbguest.installer_options = { allow_kernel_upgrade: true }
 
-  # Provider-specific configuration
+  # Virtual Box and VM resource allocation
+  # Note: These are provider-specific configurations
   config.vm.provider "virtualbox" do |vb|
     vb.name = "CentOS7_K3s_Dev"
     # Customize the amount of memory on the VM:
@@ -24,12 +25,22 @@ Vagrant.configure("2") do |config|
     vb.cpus = 4
   end
 
-  # Sync a folder from the host machine
+  # Networking
+  config.vm.hostname = "k3s-dev.local"
+  config.vm.network :private_network, ip: "192.168.33.10"
+  # Uncomment this to forward VM ports and get access via localhost:8080
+  # Run command to actualize changes `vagrant reload`
+  # config.vm.network :forwarded_port, guest: 8080, host:8080
+
+  # Synced folders
+  # Sync the /src folder from the host machine
   config.vm.synced_folder "src/", "/home/vagrant/src"
  
   # Shell provisioner
   # https://www.vagrantup.com/docs/provisioning/shell
+  # Runs `bootstrap.sh` as root, update available packages and install K3s
   config.vm.provision "bootstrap", type: "shell", path: "scripts/bootstrap.sh"
+  # Runs `extras.sh` as the default user `vagrant`, install further dev tools after bootstrap
   config.vm.provision "extras", after: "bootstrap", type: "shell", privileged: false, path: "scripts/extras.sh"
 
 end
