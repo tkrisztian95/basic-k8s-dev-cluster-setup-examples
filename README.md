@@ -41,19 +41,54 @@ To start the VM:
 PS> vagrant up
 ```
 
+**Note:** *Don't forget step into the directory where the `Vagrantfile` is placed.*
+
 To SSH into the VM:
 
 ``` PowerShell
-PS> vagrant ssh
+PS> vagrant ssh [name|id]
 ```
+_see more about this `ssh` command:_ https://www.vagrantup.com/docs/cli/ssh
+
+
+To check VMs exists or running on your host:
+``` PowerShell
+PS> vagrant global-status
+```
+_Use the `--prune` switch to avoid stale machines being listed._
 
 To delete the VM:
 
 ``` PowerShell
-PS> vagrant destroy
+PS> vagrant destroy [name|id]
 ```
 
-**Note:** *Don't forget to `cd` into the directory where the `Vagrantfile` is.*
-### Links & Other
+#### Explore your Kubernetes cluster and its status
+
+To explore and test your cluster is ready you can use the following basic `kubectl` commands after ssh into one of the VMs you have set up your Kubernetes cluster with.
+
+To get the cluster information (execute on master node). Display the address of the cluster and further services.
+```
+$ kubectl cluster-info
+```
+
+To list all nodes in the cluster with their statuses. (_If a node status isn’t ready it indicates problem._)
+```
+$ kubectl get nodes
+```
+
+To list all events with timestamps:
+```
+$ kubectl get events
+```
+
+To list all the pods in the cluster:
+```
+$ kubectl get pods -o wide --show-labels --all-namespaces
+```
+
+
+
+### Links & Useful Resources
 
 - To get the current Kubernetes stable release version simply: http://storage.googleapis.com/kubernetes-release/release/stable.txt
