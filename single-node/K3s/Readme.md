@@ -13,7 +13,7 @@ To start the VM:
 PS> vagrant up
 ```
 
-**Note:** *It takes roughly ~5min to prepare the VM and install/update addtional packages.*
+**Note:** *It takes roughly ~5min to prepare the VM and install/update additional packages.*
 
 To SSH into the VM:
 ```
@@ -55,7 +55,7 @@ See more at: https://learn.hashicorp.com/tutorials/vagrant/getting-started-netwo
 
 ### How to connect to a K8s pod running in the VM from the host
 
-Example: Deploy a Hello world app example and use kubernetes port-forwarding.
+Example: Deploy a Hello world app example and use Kubernetes port-forwarding.
 
 Run the following commands in the VM:
 ```
@@ -74,7 +74,7 @@ Hello Kubernetes bootcamp! | Running on: kubernetes-first-app | v=1
 ```
 
 Check can connect from the host:
-To connect from the host machine to the pod running inside the K8s cluster on the VM, navigate to one of URLs in your browser: 
+To connect from the host machine to the pod running inside the K8s cluster on the VM, navigate to one of the URLs in your browser: 
 - Using the VMs private IP address: http://192.168.33.10:8080, 
   -  It's fixed, defined in the Vagrantfile.
 - or via http://localhost:8080 
@@ -93,7 +93,7 @@ By default, Vagrant will share your project directory (the directory with the Va
 
 - **VM:** You can locate the synced resources in the guest machine at `/home/vagrant/src`.
 
-**Note:** You can simply change the config to point to another source directory (realtive or absolute) on your host or in the guest (absolute) any time by editing the line `config.vm.synced_folder` in the Vagrantfile.
+**Note:** You can simply change the config to point to another source directory (relative or absolute) on your host or in the guest (absolute) anytime by editing the line `config.vm.synced_folder` in the Vagrantfile.
 
 ### Verify synced folders working
 To verify your VM is picking up the files from the host `src` directory:
@@ -120,7 +120,7 @@ drwx------. 4 vagrant vagrant 85 Jun 28 14:37 ..
 -rwxrwxrwx. 1 vagrant vagrant  0 Jun 28 13:57 .gitkeep    # <-- You should see
 ```
 
-On a second terminal: Create a new file with name `Hello World` on the host in the `src/` directory.
+On a second terminal: Create a new file with the name `Hello World` on the host in the `src/` directory.
 ```
 PS single-node\K3s> echo $null >> src/"Hello World"
 ```
@@ -141,4 +141,4 @@ Ensure your current working directory is where the Vagrantfile lives before exec
 
 In case of errors try open your command window or terminal as privileged and recrating the VM with `vagrant destroy` and `vagrnat up`.
 
-**Note:** You might need Super Administrator rights on the host to setup the VMs with specific features.
+**Note:** You might need Super Administrator rights on the host to set up the VMs with specific features.
