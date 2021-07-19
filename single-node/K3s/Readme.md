@@ -17,8 +17,9 @@ PS> vagrant up
 
 To SSH into the VM:
 ```
-PS> vagrant ssh
+PS> vagrant ssh [name]
 ```
+_note:_ Specify the name `single-node.k3s` to ssh into this VM from anywhere.
 
 ### Get Started with K3s
 To check the installed k3s version:

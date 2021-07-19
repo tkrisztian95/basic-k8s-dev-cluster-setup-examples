@@ -11,6 +11,11 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "centos/7"
 
+  # The machine name replaces 'default'. 
+  # This is the name vagrant outputs on the console.
+  # Identify VM, use in global ssh commands (vagrant ssh single-node.k3s) 
+  config.vm.define "single-node.k3s"
+
   # Fix issue with vbguest plugin v0.21.0+ 
   # https://github.com/dotless-de/vagrant-vbguest/issues/399
   config.vbguest.installer_options = { allow_kernel_upgrade: true }
