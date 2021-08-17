@@ -1,7 +1,7 @@
 
 # Setup a Multi-Node Kubernetes Cluster Using Kubeadm
 
-See more at: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
+![Diagram](images/multi_node.png)
 
 ## Spinning up a CentOS 7 VMs with Docker Pre-Installed
 
@@ -42,6 +42,8 @@ PS> vagrant ssh worker-<num>
 ```
 
 ## Set Up Cluster with Kubeadm (manually)
+
+See more at: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
 
 ### Init Master Node
 
