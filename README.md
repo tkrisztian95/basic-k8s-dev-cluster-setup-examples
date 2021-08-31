@@ -87,7 +87,13 @@ To list all the pods in the cluster:
 $ kubectl get pods -o wide --show-labels --all-namespaces
 ```
 
+### Troubleshooting
 
+See the kubelet service logs running on the node:
+
+```
+$ journalctl --unit kubelet
+```
 
 ### Links & Useful Resources
 
